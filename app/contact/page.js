@@ -1,7 +1,7 @@
-import HeaderBar from "../../components/header"
+import MenuArea from "../components/menu";
 
 export default function Contact() {
   return (
-    <HeaderBar />
+    <MenuArea />
   );
 }

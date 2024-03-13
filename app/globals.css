@@ -1,6 +1,15 @@
 :root {
-  --off-white: #F6F4F3;
-  --dark-text: #000000;
+  --first-color: #D26901;
+  --second-color: #1E1E1E;
+  --third-color: #ffffff;
+  --fourth-color: #fff6f2;
+  --primary-text-color: #000000;
+  --primary-border-color: #D26901;
+
+  --large-padding: 3.125em;
+  --normal-padding: 1.25em;
+  --small-padding: .625em;
+  --very-small-padding: .3125em
 }
 
 * {
@@ -9,37 +18,44 @@
 }
 
 body {
-  background-color: #F6F4F3;
-  z-index: 1;
+  background-color: var(--fourth-color);
+  font-size: 1rem;
 }
 
-body::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('./images/background.webp') center center;
-  background-size: 45%;
-  opacity: 0.2;
-  z-index: -1;
+h1,
+h2 {
+  color: var(--first-color);
 }
 
+h1,
+h2,
+h3,
+a,
+button {
+  font-family: var(--sansita-one-font);
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-text-color);
+}
+
+p {
+  line-height: 1.8em;
+}
+
+/* Header component*/
 header {
-  background-color: var(--off-white);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.875em 1.25em;
+  padding: 1.25em;
   height: fit-content;
-}
-
-header a {
-  font-family: var(--sansita-one-font);
-  text-decoration: none;
-  color: var(--dark-text);
-  font-size: 1rem;
+  border-bottom: 1px solid var(--primary-border-color);
+  background-color: var(--fourth-color);
+  position: relative;
+  z-index: 99;
 }
 
 header button {
@@ -51,7 +67,24 @@ header button {
   padding: 2em;
   display: flex;
   justify-content: center;
-  background-color: var(--off-white);
+  background-color: var(--primary-background-color);
+  border: 1px solid #D26901;
+}
+
+header button:active {
+  transform: translateY(1px);
+  box-shadow: inset 0 0 3px var(--first-color);
+}
+
+
+header button::before {
+  display: block;
+  content: "";
+  width: 1.5rem;
+  height: .2rem;
+  background-color: #D26901;
+  position: absolute;
+  bottom: 40%;
 }
 
 header button::after {
@@ -59,17 +92,75 @@ header button::after {
   content: "";
   width: 1.5rem;
   height: .2rem;
-  background-color: black;
+  background-color: #D26901;
   position: absolute;
   top: 40%;
 }
 
-header button::before {
-  display: block;
-  content: "";
-  width: 1.5rem;
-  height: .2rem;
-  background-color: black;
+/* Header component End*/
+/* Nav component*/
+nav ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+nav ul li {
+  display: flex;
+}
+
+nav ul li a:hover {
+  background-color: var(--first-color);
+  color: var(--third-color);
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--primary-text-color);
+  background-color: var(--primary-background-color);
+  height: fit-content;
+  padding: 1.875em 1.25em;
+  width: 100%;
+}
+
+.closed {
+  display: none;
   position: absolute;
-  bottom: 40%;
+}
+
+.open {
+  display: block;
+  position: absolute;
+  z-index: 5;
+  background-color: var(--fourth-color);
+  animation: expand 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  width: 100%;
+}
+
+@keyframes expand {
+  from {
+    transform: translateY(-40px);
+  }
+
+  to {
+    transform: translateY(0px);
+  }
+}
+
+/* Nav component End*/
+
+@media (width > 600px) {
+  body {
+    display: grid;
+    grid-template-columns: auto 600px auto;
+    grid-template-rows: auto;
+  }
+
+  header {
+    grid-column: 2/3;
+  }
+
+  nav {
+    grid-column: 2/3;
+  }
 }

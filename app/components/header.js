@@ -1,7 +1,6 @@
 import Link from "next/link"
-import styles from "../app/page.module.css"
 
-export default function HeaderBar({ eventCall, buttonState }) {
+export default function HeaderBar({ eventCall, menuState }) {
 
   return (
     <header>
@@ -9,7 +8,7 @@ export default function HeaderBar({ eventCall, buttonState }) {
       <button
         onKeyDown={eventCall}
         onClick={eventCall}
-        aria-expanded={buttonState}
+        aria-expanded={menuState}
         aria-label='Menu'>
       </button>
     </header>
