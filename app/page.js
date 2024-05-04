@@ -3,7 +3,6 @@ import Stores from "./components/stores";
 import Link from "next/link";
 import styles from "./page.module.css";
 
-
 export default function Home() {
   return (
     <>
@@ -16,13 +15,13 @@ export default function Home() {
           <h1>Doughnuts Made Different</h1>
           <p>Dipped, dusted and deep-filled doughnuts. Made by hand in Manchester, delivered across England, Wales and Scotland!</p>
           <a href="https://deliveroo.co.uk/">Order Now</a>
-          <img src="/images/caramelNoBackground.webp" alt="Caramel filled white chocolate drizzled large doughnut" />
+          <img loading="lazy" src="/images/caramelNoBackground.webp" alt="Caramel filled white chocolate drizzled large doughnut" />
         </article>
 
         <section className={styles.bakerySection}>
           <h2>Take a peek inside our Manchester bakery</h2>
           <p>We spend our time baking handmade doughnuts for you to fill your hole with. Take a peek inside our Manchester bakery to see how they’re made.</p>
-          <img src="/images/bakery.webp" alt="man making doughnuts in a bakery" />
+          <img loading="lazy" src="/images/bakery.webp" alt="man making doughnuts in a bakery" />
         </section>
 
         <section className={styles.locationsSection}>

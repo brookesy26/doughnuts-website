@@ -17,16 +17,16 @@ export default function Doughnuts({ className }) {
   return (
     <section id="scrollContainer" className={className}>
       <div>
-        <img src="/images/caramel.webp" alt="large caramel doughnut" draggable="false" />
+        <img loading="lazy" src="/images/caramel.webp" alt="large caramel doughnut" draggable="false" />
       </div>
       <div>
-        <img src="/images/nutella.webp" alt="large nutella doughnut" draggable="false" />
+        <img loading="lazy" src="/images/nutella.webp" alt="large nutella doughnut" draggable="false" />
       </div>
       <div>
-        <img src="/images/bakewell.webp" alt="large bakewell doughnut with jam in the middle" draggable="false" />
+        <img loading="lazy" src="/images/bakewell.webp" alt="large bakewell doughnut with jam in the middle" draggable="false" />
       </div>
       <div>
-        <img src="/images/biscoff.webp" alt="large biscoff doughnut" draggable="false" />
+        <img loading="lazy" src="/images/biscoff.webp" alt="large biscoff doughnut" draggable="false" />
       </div>
     </section>
   );
