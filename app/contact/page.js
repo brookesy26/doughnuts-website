@@ -10,7 +10,7 @@ export default function Contact() {
       <MenuArea />
       <section className={Styles.hero}>
         <h2>Doughnut Addiction Hotline</h2>
-        <img src="/images/leavesDougnut.webp" alt="nutty doughnut with caramel center on a plate, leaves slightly in front" />
+        <img loading="eager" src="/images/leavesDougnut.webp" alt="nutty doughnut with caramel center on a plate, leaves slightly in front" />
       </section>
 
       <main className={Styles.main}>

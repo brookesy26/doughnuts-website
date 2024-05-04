@@ -9,7 +9,7 @@ export default function Wholesale() {
       <MenuArea />
       <section className={Style.hero}>
         <h2><span>Stock</span> Our Stuff</h2>
-        <img src="/images/caramelNoBackground.webp" alt="Caramel filled white chocolate drizzled large doughnut" />
+        <img loading="eager" src="/images/caramelNoBackground.webp" alt="Caramel filled white chocolate drizzled large doughnut" />
       </section>
       <main className={Style.main}>
 
