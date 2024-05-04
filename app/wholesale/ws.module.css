@@ -1,0 +1,199 @@
+.hero {
+  background-color: var(--first-color);
+  position: relative;
+  padding: 2.5em 1.25em;
+  overflow: hidden;
+}
+
+.hero h2 {
+  font-size: 6rem;
+  color: var(--third-color);
+  font-weight: 400;
+  line-height: 1em;
+}
+
+.hero h2 span {
+  color: var(--primary-text-color);
+}
+
+.hero img {
+  position: absolute;
+  width: 10.75em;
+  bottom: -2.8em;
+  right: -2em;
+  transform: rotate(-25.23deg);
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  overflow: hidden;
+}
+
+.main article {
+  padding: 1.25em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.main article a {
+  padding: 1rem 1.25rem;
+  background-color: var(--primary-text-color);
+  width: fit-content;
+  border-radius: 1rem;
+  color: var(--third-color);
+  font-size: 1.5rem;
+}
+
+.doughnutRange {
+  overflow: hidden;
+  margin: 0 0 1.25em 1.25em;
+}
+
+.doughnutRange h2 {
+  font-size: 2.5rem;
+}
+
+.doughnutRange p {
+  margin: 0.3em 0 1.5em 1em;
+  font-family: var(--sansita-one-font);
+}
+
+.doughnuts {
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  gap: 1em;
+  padding: 0 1.25em;
+}
+
+.doughnuts::-webkit-scrollbar {
+  display: none;
+}
+
+.doughnuts div a {
+  box-sizing: border-box;
+  margin: 0;
+  background-color: transparent;
+  border: 2px solid var(--first-color);
+  width: 100%;
+}
+
+.doughnuts div img {
+  border-radius: 1em;
+  height: 250px;
+}
+
+.doughnuts>div {
+  flex: none;
+  scroll-snap-align: start;
+}
+
+.enquire {
+  padding: 1.25em;
+}
+
+.enquire p {
+  padding: 1.25em;
+  border-radius: 1em;
+  border: 2px dashed var(--first-color);
+}
+
+.enquireForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25em;
+  padding: 1.25em;
+  box-sizing: border-box;
+  background-color: var(--third-color);
+  margin: 1.25em;
+  border: 1px solid #C9C9C9;
+  border-radius: 1rem;
+}
+
+.enquireForm label {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25em;
+  color: var(--first-color);
+  font-weight: 800;
+  font-size: 1.2em;
+}
+
+.enquireForm input {
+  height: 2.5em;
+  border-radius: 1.25em;
+  border: 1px solid #C9C9C9;
+}
+
+.enquireForm button {
+  margin-bottom: 0.5em;
+  padding: 1rem 1.25rem;
+  background-color: var(--first-color);
+  width: fit-content;
+  border-radius: 1rem;
+  color: var(--third-color);
+  font-size: 1.5rem;
+  border: none;
+  align-self: flex-end;
+}
+
+
+/* medias */
+
+@media (width > 1100px) {
+
+  .hero {
+    grid-column: 3/7;
+    grid-row: 2/ span 6;
+    max-width: 345px;
+    justify-self: start;
+    border-radius: 20px;
+    z-index: -1;
+    max-height: 746px;
+  }
+
+  .hero img {
+    display: none;
+  }
+
+  .main {
+    grid-template-columns: subgrid;
+    grid-column: 1/13;
+    grid-row: 2 / auto;
+    gap: 20px;
+  }
+
+  .main article {
+    grid-column: 7/ 11;
+    grid-row: 1/ span 6;
+    padding: 0;
+    margin-top: 10em;
+    max-width: 467px;
+    height: fit-content;
+    justify-self: center;
+  }
+
+  .main .doughnutRange {
+    grid-column: 3/13;
+  }
+
+  .main .doughnutRange h2 {
+    color: white;
+  }
+
+  .main .enquire {
+    grid-column: 3/7;
+    max-width: 558px;
+    justify-self: start;
+  }
+
+  .main .enquireForm {
+    grid-column: 7/11;
+    margin: 0;
+  }
+}
