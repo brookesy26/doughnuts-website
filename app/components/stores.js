@@ -1,6 +1,21 @@
+"use client"
+
+import { useEffect } from "react";
+
 export default function Stores({ className }) {
+
+  // horizontal scroll setup
+  useEffect(() => {
+    const scrollContainer = document.getElementById("scrollContainer");
+
+    scrollContainer.addEventListener("wheel", (evt) => {
+      evt.preventDefault();
+      scrollContainer.scrollLeft += evt.deltaY;
+    });
+  }, [])
+
   return (
-    <section className={className}>
+    <section id="scrollContainer" className={`${className}`}>
       <div>
         <a href="https://maps.app.goo.gl/5aRsFkzi6TLm5iwSA" target="_blank">Manchester</a>
         <img src="/images/manchester.webp" alt="Manchester store" draggable="false" />

@@ -1,106 +1,91 @@
-.hero {
-  background-color: var(--first-color);
-  position: relative;
-  padding: 2.5em 1.25em;
-  overflow: hidden;
-}
-
-.hero h2 {
-  font-size: 6rem;
-  color: var(--third-color);
-  font-weight: 400;
-  line-height: 1em;
-}
-
-.hero h2 span {
-  color: var(--primary-text-color);
-}
-
-.hero img {
-  position: absolute;
-  width: 10.75em;
-  bottom: -2.8em;
-  right: -2em;
-  transform: rotate(-25.23deg);
-}
-
 .main {
   display: grid;
-  grid-template-columns: 100%;
+  grid-template-columns: 1.25em auto 1.25em;
   grid-template-rows: auto;
-  overflow: hidden;
+  row-gap: 1.25em;
 }
 
 .main article {
-  padding: 1.25em;
+  grid-column: 2/3;
   display: flex;
   flex-direction: column;
+  background-color: var(--second-color);
+  border-radius: 1.25em;
+  padding: 1.25em;
   gap: 1em;
+  color: var(--third-color);
+  margin-top: 1.25em;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero h2 {
+  position: absolute;
+  color: var(--primary-text-color);
+  font-size: 3.5rem;
+  top: 0.2em;
+  left: 0.5em;
 }
 
 .main article a {
+  margin-bottom: 0.5em;
   padding: 1rem 1.25rem;
-  background-color: var(--primary-text-color);
+  background-color: var(--first-color);
   width: fit-content;
   border-radius: 1rem;
   color: var(--third-color);
   font-size: 1.5rem;
+  border: none;
+  align-self: flex-end;
 }
 
-.doughnutRange {
-  overflow: hidden;
-  margin: 0 0 1.25em 1.25em;
-}
-
-.doughnutRange h2 {
-  font-size: 2.5rem;
-}
-
-.doughnutRange p {
-  margin: 0.3em 0 1.5em 1em;
-  font-family: var(--sansita-one-font);
-}
-
-.doughnuts {
+.stores {
+  grid-column: 1/4;
   display: flex;
   overflow-x: scroll;
-  overflow-y: hidden;
   -ms-overflow-style: none;
   scrollbar-width: none;
   gap: 1em;
-  padding: 0 1.25em;
+  padding: 1.25em;
+  background-color: var(--second-color);
 }
 
-.doughnuts::-webkit-scrollbar {
+.stores::-webkit-scrollbar {
   display: none;
 }
 
-.doughnuts div a {
+.stores div a {
   box-sizing: border-box;
   margin: 0;
   background-color: transparent;
   border: 2px solid var(--first-color);
   width: 100%;
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+  font-size: 1.5rem;
+  color: var(--third-color);
+  background-color: var(--second-color);
 }
 
-.doughnuts div img {
+.stores div {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 1em;
+  align-items: center;
+}
+
+.stores div img {
   border-radius: 1em;
   height: 250px;
 }
 
-.doughnuts>div {
+.stores>div {
   flex: none;
-  scroll-snap-align: start;
-}
-
-.enquire {
-  padding: 1.25em;
-}
-
-.enquire p {
-  padding: 1.25em;
-  border-radius: 1em;
-  border: 2px dashed var(--first-color);
+  scroll-snap-align: center;
 }
 
 .enquireForm {
@@ -110,9 +95,10 @@
   padding: 1.25em;
   box-sizing: border-box;
   background-color: var(--third-color);
-  margin: 1.25em;
+  margin-bottom: 1.25em;
   border: 1px solid #C9C9C9;
   border-radius: 1rem;
+  grid-column: 2/3;
 }
 
 .enquireForm label {
@@ -142,23 +128,21 @@
   align-self: flex-end;
 }
 
-
 /* medias */
 
 @media (width > 1100px) {
 
   .hero {
-    grid-column: 3/7;
+    grid-column: 4/8;
     grid-row: 2/ span 6;
-    max-width: 345px;
     justify-self: start;
     border-radius: 20px;
     z-index: -1;
-    max-height: 746px;
+    width: 400px;
   }
 
   .hero img {
-    display: none;
+    border-radius: 20px;
   }
 
   .main {
@@ -169,31 +153,25 @@
   }
 
   .main article {
-    grid-column: 7/ 11;
-    grid-row: 1/ span 6;
-    padding: 0;
-    margin-top: 10em;
-    max-width: 467px;
+    grid-column: 7 / 10;
+    grid-row: 1 / 4;
+    max-width: 352px;
     height: fit-content;
+    justify-self: center;
+    margin-top: 10em;
+  }
+
+  .main .stores {
+    grid-column: 1/13;
+    grid-row: 4/span 2;
+    max-width: fit-content;
+    border-radius: 20px;
     justify-self: center;
   }
 
-  .main .doughnutRange {
-    grid-column: 3/13;
-  }
-
-  .main .doughnutRange h2 {
-    color: white;
-  }
-
-  .main .enquire {
-    grid-column: 3/7;
-    max-width: 558px;
-    justify-self: start;
-  }
-
   .main .enquireForm {
-    grid-column: 7/11;
+    grid-column: 4/10;
     margin: 0;
+    grid-row: 6/ span 3;
   }
 }

@@ -3,11 +3,15 @@ import Stores from "./components/stores";
 import Link from "next/link";
 import styles from "./page.module.css";
 
+
 export default function Home() {
   return (
     <>
+      {/*menu component */}
       <MenuArea />
+      {/*module css styles */}
       <main className={styles.main}>
+
         <article className={styles.homeArticle}>
           <h1>Doughnuts Made Different</h1>
           <p>Dipped, dusted and deep-filled doughnuts. Made by hand in Manchester, delivered across England, Wales and Scotland!</p>
@@ -25,6 +29,7 @@ export default function Home() {
           <h2>You can find our delish Ds in more places than ever!</h2>
           <p>Obey your rumble and tuck in at any of our Manchester, Stockport, Bolton or Bury stores - either box it up and go, or stick around with a coffee,
             it’s totally up to you.</p>
+          {/*stores component */}
           <Stores className={styles.stores} />
           <p> Not near a store? Fear not! Doughnuts Delivered lets you get your favourite doughnut flavours right to your door!</p>
           <a href="https://deliveroo.co.uk/">Order Now</a>
@@ -34,6 +39,7 @@ export default function Home() {
           <h2>Celebrate with something different</h2>
           <p>Whether you’re celebrating a birthday, a wedding or just making it through to Friday, say it with fresh doughnuts. Order doughnuts online for events and occasions or pick up something special from our stores just for you - we even hand-make vegan doughnuts.
           </p>
+          {/*Link component */}
           <Link href="/contact">Special Occasions</Link>
         </section>
       </main>

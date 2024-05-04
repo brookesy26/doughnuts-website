@@ -1,6 +1,8 @@
 import Link from 'next/link'
 
 export default function NavigationBar({ nameState }) {
+
+  // Nav structure using Link components
   return (
     <nav className={nameState}>
       <ul>

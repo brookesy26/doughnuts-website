@@ -5,6 +5,7 @@ import Form from "../components/form"
 export default function Wholesale() {
   return (
     <>
+      {/*menu component*/}
       <MenuArea />
       <section className={Style.hero}>
         <h2><span>Stock</span> Our Stuff</h2>
@@ -22,12 +23,14 @@ export default function Wholesale() {
         <section className={Style.doughnutRange}>
           <h2>Doughnuts</h2>
           <p>Find our extensive range below</p>
+          {/*doughnuts component*/}
           <Doughnuts className={Style.doughnuts} />
         </section>
 
         <section className={Style.enquire} id="formLoc">
           <p>Whether you need bulk doughnuts or a regular wholesale doughnut supplier, chuck your details in our form and we’ll get back to you. We’re knee-deep in batter at the moment, but we’ll be in touch about the doughnuts wholesale process.</p>
         </section>
+        {/*form component*/}
         <Form className={Style.enquireForm}></Form>
       </main>
     </>

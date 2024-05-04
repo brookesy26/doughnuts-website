@@ -1,6 +1,21 @@
+"use client"
+
+import { useEffect } from "react";
+
 export default function Doughnuts({ className }) {
+
+  // horizontal scroll setup
+  useEffect(() => {
+    const scrollContainer = document.getElementById("scrollContainer");
+
+    scrollContainer.addEventListener("wheel", (e) => {
+      e.preventDefault();
+      scrollContainer.scrollLeft += e.deltaY;
+    });
+  }, [])
+
   return (
-    <section className={className}>
+    <section id="scrollContainer" className={className}>
       <div>
         <img src="/images/caramel.webp" alt="large caramel doughnut" draggable="false" />
       </div>

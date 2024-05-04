@@ -10,6 +10,7 @@ export default function About() {
         <h3>Our Story</h3>
         <img src="/images/sprinkle.webp" alt="Sugar being sprinkled onto a large doughnut" />
       </section>
+
       <main className={aboutStyle.main}>
         <article className={aboutStyle.article}>
           <h1>About Us</h1>
